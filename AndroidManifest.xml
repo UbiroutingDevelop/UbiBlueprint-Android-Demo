@@ -39,11 +39,10 @@
             </intent-filter>
         </activity>
 
-        <!-- 37592cf82327a656a7b4158c7dcf900d -->
 
         <meta-data
             android:name="ShituKey"
-            android:value="37592cf82327a656a7b4158c7dcf900d" />
+            android:value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
     </application>
 
 </manifest>

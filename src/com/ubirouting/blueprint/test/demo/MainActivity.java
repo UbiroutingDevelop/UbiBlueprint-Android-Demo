@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.test.testshitublueprint.R;
 import com.ubirouting.blueprint.ShituBlueprintManager;
 import com.ubirouting.blueprint.ShituBlueprintManager.OnPositionSuccess;
 import com.ubirouting.blueprint.socket.Position;
@@ -71,5 +70,5 @@ public class MainActivity extends Activity {
 			locM.stopBlueprintLocation();
 		}
 	}
-
+	
 }
