@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ubirouting.blueprint.test.demo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <!-- 请保证最低版本在 android 4.3 以上 -->
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="23" />
+
+    <!-- 允许程序连接配对过的蓝牙设备 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!-- 允许程序进行发现和配对新的蓝牙设备 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- 允许程序进行网络访问 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 允许程序向SD卡中写入文件 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许程序查看WIFI状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许程序查看网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 允许程序更改网络状态 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.ubirouting.blueprint.test.demo.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 37592cf82327a656a7b4158c7dcf900d -->
+
+        <meta-data
+            android:name="ShituKey"
+            android:value="37592cf82327a656a7b4158c7dcf900d" />
+    </application>
+
+</manifest>
