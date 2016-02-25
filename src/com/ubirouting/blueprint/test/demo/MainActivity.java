@@ -50,8 +50,9 @@ public class MainActivity extends Activity {
 				int id =arg0.get(0).getPlaceId();
 				place.setPlaceId(id);
 				
-			  //locM=new ShituBlueprintManager(MainActivity.this, id, false,new OnPositionSuccess() {
-				locM=new ShituBlueprintManager(MainActivity.this, 913, false,new OnPositionSuccess() {
+			  //locM=new ShituBlueprintManager(MainActivity.this, place,new OnPositionSuccess() {
+			  //locM=new ShituBlueprintManager(MainActivity.this, id,new OnPositionSuccess() {
+				locM=new ShituBlueprintManager(MainActivity.this, 913,new OnPositionSuccess() {
 					@Override
 					public void onPosition(Position arg0) {
 						Log.d("UbiBeaLibTest", arg0.toString());
