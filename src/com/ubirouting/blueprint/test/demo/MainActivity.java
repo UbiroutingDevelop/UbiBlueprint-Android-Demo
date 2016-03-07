@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
 				place.setPlaceId(id);
 				
 			  //locM=new ShituBlueprintManager(MainActivity.this, place,new OnPositionSuccess() {
-			  //locM=new ShituBlueprintManager(MainActivity.this, id,new OnPositionSuccess() {
+			  //locM=new ShituBlueprintManager(MainActivity.this, id ,new OnPositionSuccess() {
 				locM=new ShituBlueprintManager(MainActivity.this, 913,new OnPositionSuccess() {
 					@Override
 					public void onPosition(Position arg0) {

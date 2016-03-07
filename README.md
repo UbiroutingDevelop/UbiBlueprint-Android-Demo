@@ -91,15 +91,10 @@ SDK中包含
 
 ###3.4 定位
 
-如果您只需要使用蓝牙扫描不需要定位的话只需要实例化context 即可。
-	
-	//传入context 上下文对象
-	ShituBlueprintManager blueprintManager=new ShituBlueprintManager(this);
+在您使用定位服务时需要使用此构造实例：
 
-如果您需要使用定位则需要使用此构造实例：
-
-	//分别传入 context上下文对象,PlaceId Creator中建筑Id,isParseBean 生成完整对象，位置返回回调
-	blueprintManager=new ShituBlueprintManager(this,10,false,new OnPositionSuccess() {
+	//分别传入 context上下文对象,PlaceId Creator中建筑Id，位置返回回调
+	blueprintManager=new ShituBlueprintManager(this,10,new OnPositionSuccess() {
 		@Override
 		public void onPosition(Position pos) {
 			// TODO Auto-generated method stub
@@ -108,7 +103,7 @@ SDK中包含
 
 其中，第二个参数为建筑id，也可以直接替换 id 传入place 对象。
 
-	blueprintManager=new ShituBlueprintManager(this,place,false,new OnPositionSuccess() {...}
+	blueprintManager=new ShituBlueprintManager(this,place,new OnPositionSuccess() {...}
 
 回调中的对象为您定位出的位置对象，其中位置信息 x，y 与您在Creator 或云平台中上传的图片坐标对应。
 
@@ -131,16 +126,6 @@ SDK中包含
 	//停止定位 返回boolean 是否关闭成功
 	stopBlueprintLocation();
 
-当您在不进行定位时，您可以单独获取Beacon数据，但这也需要您申请key 才可以使用
-
-	//开启扫描
-	startBlueprint();
-
-	//获取数据
-	getBlueprintData();
-
-	//停止扫描
-	stopBlueprint();
 
 #####3.6.2 Key的验证
 在您每一次实例化定位类，获取建筑信息，以及每一次提交定位时均会提交至少1次的Key验证请求。
@@ -159,7 +144,7 @@ SDK中包含
 
 同理如果您在使用定位功能时，不传入回调或者回调为null 时同样无法使用定位功能。
 
-	new ShituBlueprintManager(this,10,false,null);
+	new ShituBlueprintManager(this,10,null);
 
 当您的Key 错误或者正在验证Key 时，您所有的扫描结果会是null
 ，而定位结果会是 x=0，y=0，area=-99
@@ -186,8 +171,8 @@ SDK中包含
 				int id =arg0.get(0).getPlaceId();
 				place.setPlaceId(id);
 				
-			  //locM=new ShituBlueprintManager(MainActivity.this, id, false,new OnPositionSuccess() {
-				locM=new ShituBlueprintManager(MainActivity.this, place, false,new OnPositionSuccess() {
+			  //locM=new ShituBlueprintManager(MainActivity.this, id,new OnPositionSuccess() {
+				locM=new ShituBlueprintManager(MainActivity.this, place,new OnPositionSuccess() {
 					@Override
 					public void onPosition(Position arg0) {
 						Log.d("UbiBeaLibTest", arg0.toString());
