@@ -40,13 +40,13 @@ public class MainActivity extends Activity {
 			@Override
 			public void onDataReturn(List<Place> arg0) {
 				for (Place place : arg0) {
-					//¿ÉÒÔ»ñÈ¡µ½ÄúÖ®Ç°Ìí¼ÓµÄĞÅÏ¢
+					//å¯ä»¥è·å–åˆ°æ‚¨ä¹‹å‰æ·»åŠ çš„ä¿¡æ¯
 					Log.d("UbiBeaLibTest", "id:"+place.getPlaceId()+",name:"+place.getPlaceName());
 				}
-				//Ö±½ÓÊ¹ÓÃ¶ÔÏó
+				//ç›´æ¥ä½¿ç”¨å¯¹è±¡
 				Place place=arg0.get(0);
 				
-				//»òÊÖ¶¯Ö¸¶¨id
+				//æˆ–æ‰‹åŠ¨æŒ‡å®šid
 				int id =arg0.get(0).getPlaceId();
 				place.setPlaceId(id);
 				
@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
 					}
 				});
 				
-				//Æô¶¯¶¨Î»
+				//å¯åŠ¨å®šä½
 				locM.startBlueprintLocation();
 			}
 		});
@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
     
 	private void stopShituBlueprintLocation() {
 		if (locM != null) {
-			// Í£Ö¹¶¨Î»
+			// åœæ­¢å®šä½
 			locM.stopBlueprintLocation();
 		}
 	}
